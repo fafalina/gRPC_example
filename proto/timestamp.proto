@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option go_package = "../server/proto";
+
+message TimestampData {
+    string timestamp = 1;
+}
+
+service TimestampService {
+    rpc GetTimestampData (google.protobuf.Empty) returns (TimestampData);
+}
