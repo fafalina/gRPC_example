@@ -4,6 +4,7 @@ go 1.21.6
 
 require (
 	firebase.google.com/go/v4 v4.13.0
+	github.com/rs/cors v1.10.1
 	google.golang.org/api v0.159.0
 	google.golang.org/grpc v1.61.0
 	google.golang.org/protobuf v1.32.0
