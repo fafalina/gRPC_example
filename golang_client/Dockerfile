@@ -1,15 +1,12 @@
 FROM golang:alpine AS builder
 
-WORKDIR /server
+WORKDIR /client
 
 COPY . .
 RUN go mod download
 RUN go build -o app
 
 FROM alpine:latest
-COPY --from=builder /server/app /
-COPY --from=builder /server/db/*.json /db/
-
-EXPOSE 8081
+COPY --from=builder /client/app /
 
 ENTRYPOINT ["/app"]

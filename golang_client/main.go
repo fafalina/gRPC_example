@@ -11,7 +11,7 @@ import (
 
 func main() {
 	for {
-		testGetTimestampData("localhost:8081")
+		testGetTimestampData("grpc_server:8081")
 		time.Sleep(1 * time.Second)
 	}
 }

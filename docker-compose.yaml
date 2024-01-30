@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  grpc_server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+
+  grpc_client:
+    build:
+      context: ./golang_client
+      dockerfile: Dockerfile
+    depends_on:
+      - grpc_server
